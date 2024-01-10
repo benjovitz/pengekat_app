@@ -43,6 +43,9 @@ async function handleLogin(){
             <Pressable onPress={handleLogin} style={styles.button}>
                 <Text style={styles.buttonText}>Log Ind</Text>
             </Pressable>
+            <Pressable onPress={() => navigation.navigate("Ny Bruger")} style={styles.button}>
+                <Text style={styles.buttonText}>Opret</Text>
+            </Pressable>
         </View>
     )
 }

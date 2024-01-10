@@ -17,6 +17,7 @@ export default GroupCard = ({group, navigation, userId}) => {
                 </View>
                 
                 <View style={styles.groupBalanceContainer}>
+                    <Text style={{fontSize: 60, marginRight: 20}}>{group.total_sum}</Text>
                 <Text  style={group.members[0].balance < 0 ? styles.red : styles.green}>
                             {group.members[0].balance}
                 </Text>

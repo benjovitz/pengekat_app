@@ -3,10 +3,18 @@ import styles from "../../utils/styles.js";
 import { FlatList, View } from "react-native";
 
 export default Messages = ({messages, userId, groupInfo}) => {
-
+    console.log(groupInfo)
     function addUsernames(){
-        
+        messages.map(message => {
+            const foundMember = groupInfo.members.find(member => member._userId === message._userId)
+            if(foundMember){
+                message.username = foundMember.username
+            }
+        })
+
     }
+
+    addUsernames()
 
     const test = [
         {

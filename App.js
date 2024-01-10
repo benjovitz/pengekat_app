@@ -8,6 +8,7 @@ import GroupChat from "./views/GroupChat/GroupChat.js";
 import AddExpense from "./views/AddExpense/AddExpense.js";
 import Balance from "./views/Balance/Balance.js";
 import NewGroup from "./views/NewGroup/NewGroup.js";
+import SignUp from "./views/SignUp/SignUp.js";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -64,6 +65,15 @@ export default function App() {
           <Stack.Screen 
             name='Ny Gruppe'
             component={NewGroup} 
+            options={{
+              headerStyle: {
+                backgroundColor: "#032425"
+              },
+              headerTintColor: "#dfe3e4"
+            }}/>
+          <Stack.Screen 
+            name='Ny Bruger'
+            component={SignUp} 
             options={{
               headerStyle: {
                 backgroundColor: "#032425"

@@ -18,8 +18,8 @@ export default GroupChat = ({navigation, route}) => {
     const [newMember, setNewMember] = useState("")
 
     useEffect(() => {
-        getMessages(groupId, setMessages)
         getGroupInfo(groupId, setGroupInfo)
+        getMessages(groupId, setMessages)
     }, [])
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export default GroupChat = ({navigation, route}) => {
                 </View>
                 </View>
             <View style={styles.bottomBar}>
-                <Text style={styles.bottomButton} onPress={() => navigation.navigate("Balance", {groupInfo})}>Se balance</Text>
+                <Text style={styles.bottomButton} onPress={() => navigation.navigate("Balance", {groupInfo, userId})}>Se balance</Text>
                 <Text style={styles.bottomButton} onPress={() => navigation.navigate("Tilføj Udgift", {userId, groupId, groupInfo})}>Tilføj udgift</Text>
                 <Text style={styles.bottomButton} onPress={() => leaveGroup(groupId)}>Forlad gruppe</Text>
                
@@ -109,7 +109,7 @@ async function sendMessage(groupId, message, userId){
     }
 }
 
-async function leaveGroup(groupId, userId){
+async function leaveGroup(groupId){
     try {
         const response =  await fetch(BASE_URL + "/api/groups/" + groupId + "/leave", {
         credentials: "include"

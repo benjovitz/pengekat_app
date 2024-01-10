@@ -7,7 +7,7 @@ export default ChatMessage = ({message, userId}) => {
     if(!message.amount){
         return(
             <View>
-                <Text style={{}}>{message._userId}</Text>
+                <Text style={userId === message._userId ? {alignSelf: "flex-end"} : ""}>{message.username}</Text>
             <Text
             style={userId === message._userId ? styles.messageFromUser : styles.messageFromOther}
             >{message.comment}</Text>
@@ -16,7 +16,7 @@ export default ChatMessage = ({message, userId}) => {
     } else {
         return(
             <View style={styles.expense} >
-            <Text style={{fontSize: 20, fontWeight: "bold"}} >{message.comment}</Text>
+            <Text style={{fontSize: 20, fontWeight: "bold"}} >{message.username} - {message.comment}</Text>
             <Text style={{fontSize: 30, fontWeight: "bold"}} onLongPress={() => confirmDelete(message)}>{message.amount} {message.currency}</Text>
             </View>
         )

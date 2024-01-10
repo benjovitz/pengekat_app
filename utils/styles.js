@@ -40,7 +40,7 @@ export default styles = StyleSheet.create({
     },
     groupBalanceContainer:{
       flex: 1,
-      alignItems: "center"
+      flexDirection: "row"
     },
     groupName:{
       fontSize: 30,
@@ -125,6 +125,14 @@ export default styles = StyleSheet.create({
       fontSize: 40, 
       color: "#dfe3e4", 
       marginBottom: 20
-    }
+    },
+    nameTagUser: {
+      alignSelf: "flex-end"
+    },
+    expenseInput: {
+      fontSize: 20, 
+      color: "#dfe3e4", 
+      marginBottom: 20
+    },
   });
   

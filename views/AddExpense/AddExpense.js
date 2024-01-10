@@ -36,14 +36,15 @@ export default AddExpense = ({navigation, route}) => {
             isChecked={equalShareState}
             onPress={() => setEqualShareState(!equalShareState)}
             />
-            {! equalShareState && <View>
-              <Text>mangler: {amount - amountCheck}</Text>
+            {!equalShareState && <View>
+              <Text style={{color: "#dfe3e4", fontSize: 40}}>mangler: {amount - amountCheck}</Text>
               <FlatList
               data={unEqualShare}
               keyExtractor={(item) => item.userId}
               renderItem={({item}) => <View> 
-                <Text>{item.username}</Text> 
+                <Text style={{color: "#dfe3e4", fontSize: 20}}>{item.username}</Text> 
                 <TextInput
+                placeholderTextColor="#dfe3e4" style={styles.expenseInput}
                 keyboardType="numeric" 
                 onChangeText={(share) => {
                     setUnequalShare(prevShares => prevShares.map(member => 
